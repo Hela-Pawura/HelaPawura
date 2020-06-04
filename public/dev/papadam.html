@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="adm.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Papadam Grows here</title>
+  </head>
+  <body>
+    <div id="con">
+      <input type="text" id="h-email" />
+      <input type="password" id="h-pwd" name="sasdfgd" />
+    </div>
+    <div id="content" style="display:none;">
+      <h1>admin nibbas</h1>
+      <h5 id="status">Status: Loading</h5>
+
+      Img URL <input type="text" id="imgURL" size="40" />
+      <button id="url-search" onclick="searchByImgUrl()">Search</button>
+      <div id="image-search-results"></div>
+    </div>
+
+    <div id="d"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+      firebase.analytics();
+    </script>
+
+    <script src="adm.js"></script>
+  </body>
+</html>

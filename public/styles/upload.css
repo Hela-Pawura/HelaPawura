@@ -1,0 +1,12 @@
+#map {
+  height: 100px;
+  width: 1000px;
+}
+
+.uploading-div {
+  height: 100%;
+  width: 100%;
+  background-color: #f00;
+  z-index: 3;
+  position: absolute;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hela Pawura</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/grid.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      data-ad-client="ca-pub-1529179747129118"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/"
+        ><img src="images/icon.png" class="align-middle" id="icon" alt="" />
+        <img src="images/text-sin2.png" id="text-icon" alt="" />
+      </a>
+    </nav>
+    <!-- End of nav bar -->
+
+    <div id="grid-container">
+      <div class="row" id="r1" style="margin:0!important">
+        <div class="column" id="c0"></div>
+        <div class="column" id="c1"></div>
+        <div class="column" id="c2"></div>
+        <div class="column" id="c3"></div>
+      </div>
+    </div>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <!-- sqr -->
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-1529179747129118"
+      data-ad-slot="1546591554"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01" />
+
+      <!-- Modal Caption (Image Text) -->
+      <div id="caption"></div>
+    </div>
+
+    <!-- SPINNER -->
+    <div class="loading-div" id="loading-spinner">
+      <div class="text-center" style="z-index: 22; margin-top:100px;">
+        <div
+          class="spinner-border m-5"
+          style="width: 3rem; height: 3rem; "
+          role="status"
+        >
+          <span class="sr-only ">Loading ... </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+      firebase.analytics();
+    </script>
+
+    <script src="scripts/pawura.js" defer></script>
+  </body>
+</html>

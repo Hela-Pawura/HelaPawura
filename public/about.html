@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--  This file has been downloaded from https://bootdey.com  -->
+    <!--  All snippets are MIT license https://bootdey.com/license -->
+    <title>About Us</title>
+
+    <link href="./styles/bootstrapus.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <style type="text/css">
+      .page-title {
+        color: #5bc0de;
+      }
+      .member-content .social-content li a {
+        display: inline-block;
+        padding: 0;
+        min-width: 40px;
+        height: 40px;
+        font-size: 21px;
+        line-height: 40px;
+        color: #5cc9df;
+        border-radius: 5px;
+        box-shadow: 0 3px 0 0 transparent;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .member-content .details {
+        margin: 20px 0 0 20px;
+        position: relative;
+        padding: 30px;
+        padding-left: 100px;
+        background: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.08);
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .member-content {
+        margin-bottom: 30px;
+      }
+
+      .member-thumb {
+        text-align: center;
+      }
+
+      .member-thumb h4 {
+        font-size: 21px;
+        margin: 10px 0;
+      }
+
+      .member-thumb .title {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #5cc9df;
+      }
+
+      .member-content:hover .details {
+        background: #5bc0de;
+        color: #fff;
+      }
+
+      .member-content.right .details {
+        margin: 20px 20px 0 0;
+        box-shadow: -5px 5px 0 rgba(0, 0, 0, 0.08);
+      }
+
+      .member-content .details:after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: -18px;
+        top: 30px;
+        width: 0px;
+        height: 0px;
+        background: transparent;
+        border: 20px solid transparent;
+        border-left: 20px solid #f5f5f5;
+        box-shadow: -3px 0 0 rgba(0, 0, 0, 0.08);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: border-left-color 0.3s ease-out;
+        transition: border-left-color 0.3s ease-out;
+      }
+
+      .member-content.right .details:after {
+        position: absolute;
+        left: auto;
+        right: -17px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid #f5f5f5;
+        box-shadow: 3px 0 0 0 rgba(0, 0, 0, 0.08);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: border-right-color 0.3s ease-out;
+        transition: border-right-color 0.3s ease-out;
+      }
+
+      .member-content:hover .details:after {
+        border-left-color: #5cc9df;
+      }
+
+      .member-content.right:hover .details:after {
+        border-left-color: transparent;
+        border-right-color: #5cc9df;
+      }
+
+      .member-content .details:before {
+        display: block;
+        content: "\201D";
+        position: absolute;
+        left: 20px;
+        top: 50px;
+        font-size: 120px;
+        font-weight: 800;
+        line-height: 60px;
+        font-family: Arial;
+        color: #5cc9df;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      .member-content:hover .details:before {
+        color: #fff;
+      }
+
+      .member-content .social-content {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .member-content .social-content li {
+        display: inline;
+        text-align: center;
+        margin: 0 2px;
+      }
+
+      .member-content:hover .social-content li a {
+        color: #fff;
+      }
+
+      .member-content .social-content li a:hover {
+        background: #fff;
+        color: #5cc9df;
+        box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/"
+        ><img
+          src="images/icon.png"
+          height="100"
+          width="100"
+          class="align-middle"
+          id="icon"
+        />
+        <img
+          src="images/text-sin2.png"
+          height="100"
+          width="300"
+          id="text-icon"
+        />
+      </a>
+    </nav>
+    <br />
+    <br />
+    <div class="container bootstrap snippet">
+      <section id="team" class="white-bg padding-top-bottom">
+        <div class="container bootstrap snippet">
+          <h1 class="section-title text-center page-title">MEET OUR TEAM</h1>
+          <!--<p class="section-description text-center">We are a small team with great skills. See the faces behind the lines of code. </p>-->
+          <div class="row member-content">
+            <div class="col-sm-3 col-sm-offset-1 member-thumb  fade-right in">
+              <img
+                class="img-responsive img-center img-thumbnail img-circle"
+                src="https://avatars3.githubusercontent.com/u/16420415?s=460&v=4"
+                alt=""
+              />
+              <h4>Navindu Amarakoon</h4>
+              <p class="title">Developer</p>
+            </div>
+            <div class="col-sm-7">
+              <div class="details">
+                <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
+                <ul class="social-content">
+                  <li>
+                    <a href="https://twitter.com/notnavindu" target="_blank"
+                      ><i class="fa fa-twitter fa-fw"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/notnavindu"
+                      target="_blank"
+                      ><i class="fa fa-facebook fa-fw"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/notnavindu/"
+                      target="_blank"
+                      ><i class="fa fa-linkedin fa-fw"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row member-content right">
+            <div class="col-sm-3 col-sm-push-8 member-thumb">
+              <img
+                class="img-responsive img-center img-thumbnail img-circle"
+                src="./images/assets/geeth.png"
+                alt=""
+              />
+              <h4>Geethmaka Dissanayake</h4>
+              <p class="title">Developer</p>
+            </div>
+            <div class="col-sm-7 col-sm-pull-2">
+              <div class="details">
+                <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>-->
+                <ul class="social-content">
+                  <li>
+                    <a href="mailto:geethmaka@gmail.com" target="_blank"
+                      ><i class="fa fa-envelope fa-fw"></i
+                    ></a>
+                  </li>
+                  <!--<li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>-->
+                  <li>
+                    <a href="https://www.facebook.com/geethmaka" target="_blank"
+                      ><i class="fa fa-facebook fa-fw"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/geethmaka"
+                      target="_blank"
+                      ><i class="fa fa-linkedin fa-fw"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>

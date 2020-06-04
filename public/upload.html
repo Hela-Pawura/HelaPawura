@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Hela Pawura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      #map {
+        width: 100%;
+        max-width: 600px;
+        height: 70%;
+        margin: auto;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .uploading-div {
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        opacity: 0.8;
+        z-index: 3;
+        position: absolute;
+        padding-top: 40px;
+      }
+
+      .address {
+        font-size: 11px !important;
+      }
+
+      .navbar-brand {
+        margin-left: 30px;
+      }
+
+      @media only screen and (max-width: 572px) {
+        #map {
+          margin: 0px;
+          margin-bottom: 20px;
+        }
+        .navbar-brand {
+          margin-left: 0px;
+        }
+      }
+
+      /* NAV BAR THINGS */
+      #icon {
+        width: 60px;
+        display: inline-block;
+      }
+      #text-icon {
+        width: 200px;
+        margin-left: 10px;
+      }
+      @media only screen and (max-width: 572px) {
+        #icon {
+          width: 50px !important;
+        }
+        #text-icon {
+          width: 150px !important;
+        }
+      }
+
+      @media only screen and (max-width: 432px) {
+        #icon {
+          width: 30px !important;
+        }
+        #text-icon {
+          width: 125px !important;
+          margin-left: 0px;
+        }
+      }
+
+      .navbar-brand {
+        margin-right: 2px;
+      }
+      .navbar {
+        padding-bottom: 12px;
+      }
+      /* END OF NAV BAR THINGS */
+    </style>
+  </head>
+  <body>
+    <!-- Facebook SDK-->
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=2663325487056833&autoLogAppEvents=1"
+    ></script>
+    <!-- End facebook sdk-->
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/"
+        ><img src="images/icon.png" class="align-middle" id="icon" alt="" />
+        <img src="images/text-sin2.png" id="text-icon" alt="" />
+      </a>
+    </nav>
+
+    <!-- header -->
+    <div class="text-center" style="margin:30px;">
+      <h2>Upload photos</h2>
+    </div>
+    <!-- End of header-->
+    <div id="map"></div>
+
+    <!-- Initial loading div for Auth services to load-->
+    <div class="loading-div" id="loading-spinner">
+      <div class="text-center" style="z-index: 22;">
+        <div
+          class="spinner-border m-5"
+          style="width: 3rem; height: 3rem; "
+          role="status"
+        >
+          <span class="sr-only ">Loading ... </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Must login container -->
+    <div
+      id="must-login-container"
+      class="text-center "
+      style="margin:30px; display:none;"
+    >
+      <h4>You Must Sign In First</h4>
+      <br />
+      <button type="button" id="sign-in-fb-btn" class="btn btn-info">
+        <i class="fa fa-facebook"></i>
+        Sign In With Facebook
+      </button>
+    </div>
+    <!-- Error heading -->
+    <h2 id="errorWrapper" style="color:red; display:none;"></h2>
+
+    <!-- Upload container -->
+    <div id="upload-wrapper" class="text-center">
+      <br /><br />
+      <!-- Uploading spinner-->
+      <div class="uploading-div" id="spinner" style="display:none;">
+        <div class="text-center" style="z-index: 22;">
+          <h4>Uploading</h4>
+          <div
+            class="spinner-border m-5"
+            style="width: 7rem; height: 7rem; "
+            role="status"
+          >
+            <span class="sr-only ">Uploading</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form fields -->
+      <label>Choose Images </label><br />
+      <input
+        type="file"
+        id="file"
+        accept="image/x-png,image/gif,image/jpeg"
+        multiple
+      /><br /><br />
+      <br />
+      <label>Select Your District </label><br />
+      <!-- District Input -->
+      <select id="district">
+        <option value="0" selected>Choose ... </option>
+        <option value="ampara">Ampara</option>
+        <option value="anuradhapura">Anuradhapura</option>
+        <option value="badulla">Badulla</option>
+        <option value="baticaloa">Baticaloa</option>
+        <option value="colombo">Colombo</option>
+        <option value="galle">Galle</option>
+        <option value="gampaha">Gampaha</option>
+        <option value="hambantota">Hambantota</option>
+        <option value="jaffna">Jaffna</option>
+        <option value="kalutara">Kalutara</option>
+        <option value="kandy">Kandy</option>
+        <option value="kegalle">Kegalle</option>
+        <option value="kilinochchi">Kilinochchi</option>
+        <option value="kurunegala">Kurunegala</option>
+        <option value="mannar">Mannar</option>
+        <option value="matara">Matara</option>
+        <option value="matale">Matale</option>
+        <option value="mullaitivu">Mullaitivu</option>
+        <option value="monaragala">Monaragala</option>
+        <option value="nuwara-eliya">Nuwara Eliya</option>
+        <option value="polonnaruwa">Polonnaruwa</option>
+        <option value="puttalam">Puttalam</option>
+        <option value="ratnapura">Ratnapura</option>
+        <option value="trincomalee">Trincomalee</option>
+        <option value="vavuniya">Vavuniya</option>
+      </select>
+      <br /><br /><br />
+
+      <!-- Search bar with auto complete-->
+      <label>Search</label>
+      <input
+        type="text"
+        class="form-control"
+        style="width:100%; max-width:500px; margin:auto; text-align: center; height:30px;"
+        id="locationSearch"
+        aria-describedby="emailHelp"
+        placeholder="Enter Location"
+        id="location"
+      />
+      <br /><br />
+      <button id="upload-btn" class="btn btn-primary">Upload</button
+      ><br /><br />
+    </div>
+
+    <div id="done" style="display: none; margin-top:30px;" class="text-center">
+      <h4 style="color:#0f0">Uploaded!</h4>
+      <br /><br />
+      <h5>Thank you for your contributions!</h5>
+      <br />
+      <div
+        class="fb-like"
+        data-href="https://www.facebook.com/helapawura/"
+        data-width="50"
+        data-layout="standard"
+        data-action="like"
+        data-size="small"
+        data-share="true"
+      ></div>
+      <br /><br />
+      <br />
+      <a href="upload.html"
+        ><button class="btn btn-danger" style="margin:5px">
+          Upload More
+        </button></a
+      >
+      <a href="./"
+        ><button class="btn btn-success" style="margin:5px">Go Back</button></a
+      >
+      <a href="account.html"
+        ><button class="btn btn-warning" style="margin:5px">
+          My Account
+        </button></a
+      >
+    </div>
+    <br /><br />
+    <!-- Footer -->
+    <div
+      class="footer"
+      style="padding-top:20px; padding-bottom:10px"
+      id="footer"
+    >
+      <div class="text-muted" style="margin-bottom:10px;">
+        Made By Sri Lankans <br />
+        For Sri Lankans
+      </div>
+
+      <a href="https://www.facebook.com/helapawura/">Contact Us</a>
+
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+    <!-- End of footer -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="../scripts/compress.js"></script>
+    <script src="../scripts/upload.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK8zqn56A7JyjsfSGPgLgaGt-KROEzi0&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

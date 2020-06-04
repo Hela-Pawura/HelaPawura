@@ -1,0 +1,321 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  padding: 0 !important;
+}
+input {
+  height: 40px !important;
+  text-align: center;
+}
+
+#map {
+  margin: 40px;
+}
+#autocomplete {
+  width: 100%;
+  max-width: 350px;
+}
+.navbar-brand {
+  margin-left: 30px;
+}
+
+/* Image viewer overlay */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #fff;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.preview-img {
+  width: 100%;
+  max-width: 600px;
+}
+.author {
+  color: #848484;
+  margin-bottom: 20px;
+}
+.account-button {
+  right: 0 !important;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.district-card {
+  width: 100%;
+  margin: auto;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 572px) {
+  #map {
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .navbar-brand {
+    margin-left: 0px;
+  }
+}
+
+/* NAV BAR THINGS */
+#icon {
+  width: 60px;
+  display: inline-block;
+}
+#text-icon {
+  width: 200px;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 572px) {
+  #icon {
+    width: 50px !important;
+  }
+  #text-icon {
+    width: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 432px) {
+  #icon {
+    width: 30px !important;
+  }
+  #text-icon {
+    width: 125px !important;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 347px) {
+  #icon {
+    width: 25px !important;
+  }
+  #text-icon {
+    width: 95px !important;
+    margin-left: 0px;
+  }
+  .account-button {
+    padding: 5px;
+  }
+}
+
+.navbar-brand {
+  margin-right: 2px;
+}
+.navbar {
+  padding-bottom: 12px;
+}
+/* END OF NAV BAR THINGS */
+
+.footer {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  height: auto;
+  width: 100%;
+  background: #f0f0f0;
+  text-align: center;
+  color: #8a8a8a;
+}
+.footer a {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #8a8a8a;
+}
+
+/**   PAWURA PREVIEW ** */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 40px;
+  margin: 0px !important;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 13%;
+  max-width: 13%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 25%;
+    max-width: 50%;
+  }
+}
+/* Responsive layout - mobile devices */
+@media screen and (max-width: 500px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/*
+ Responsive layout - makes the two columns stack on top of each other instead of next to each other 
+@media screen and (max-width: 600px) {
+  .row {
+    padding: 0;
+  }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}*/
+
+@media screen and (max-width: 600px) {
+  .row {
+    padding: 2px;
+  }
+}
+
+/* Style the Image Used to Trigger the Modal */
+.grid-img {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.grid-img:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}

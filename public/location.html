@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hela Pawura</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      data-ad-client="ca-pub-1529179747129118"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <style>
+      html {
+        padding: 0;
+        margin: 0;
+      }
+      img {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .text-muted {
+        margin-bottom: 20px;
+      }
+
+      /* NAV BAR THINGS */
+      #icon {
+        width: 60px;
+        display: inline-block;
+      }
+      #text-icon {
+        width: 200px;
+        margin-left: 10px;
+      }
+      @media only screen and (max-width: 572px) {
+        #icon {
+          width: 50px !important;
+        }
+        #text-icon {
+          width: 150px !important;
+        }
+      }
+
+      @media only screen and (max-width: 432px) {
+        #icon {
+          width: 30px !important;
+        }
+        #text-icon {
+          width: 125px !important;
+          margin-left: 0px;
+        }
+      }
+
+      .navbar-brand {
+        margin-right: 2px;
+      }
+      .navbar {
+        padding-bottom: 12px;
+      }
+      /* END OF NAV BAR THINGS */
+    </style>
+  </head>
+
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand " href="/"
+        ><img src="images/icon.png" class="align-middle" id="icon" alt="" />
+        <img src="images/text-sin2.png" id="text-icon" alt="" />
+      </a>
+    </nav>
+    <!-- End of nav bar -->
+
+    <h1 style="text-align:center; margin:50px;" id="district-heading">
+      Loading..
+    </h1>
+
+    <div id="img-container" class="text-center"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+      firebase.analytics();
+    </script>
+
+    <script src="scripts/location.js"></script>
+  </body>
+</html>

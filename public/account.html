@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Hela Pawura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/account.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      data-ad-client="ca-pub-1529179747129118"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      data-ad-client="ca-pub-1529179747129118"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/"
+        ><img
+          src="images/icon.png"
+          class="align-middle"
+          id="icon"
+          alt=""
+          style="max-width:90%"
+        />
+        <img
+          src="images/text-sin2.png"
+          id="text-icon"
+          alt=""
+          style="max-width:90%"
+        />
+      </a>
+      <button class="btn btn-danger account-button" id="signout">
+        Sign Out
+      </button>
+    </nav>
+    <!-- End of nav bar -->
+
+    <!-- header -->
+    <div class="text-center" style="margin:30px;" id="account-header">
+      <h2>Account - Hela Pawura</h2>
+    </div>
+
+    <!-- Initial Spinner div for Auth services to load-->
+    <div class="loading-div" id="loading-spinner">
+      <div class="text-center" style="z-index: 22; margin-top:100px;">
+        <div
+          class="spinner-border m-5"
+          style="width: 3rem; height: 3rem; "
+          role="status"
+        >
+          <span class="sr-only ">Loading ... </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Must login container -->
+    <div
+      id="must-login-container"
+      class="text-center "
+      style="margin:30px; display:none;"
+    >
+      <h4>You Must Sign In First</h4>
+      <br />
+      <button type="button" id="sign-in-fb-btn" class="btn btn-info">
+        <i class="fa fa-facebook"></i>
+        Sign In With Facebook
+      </button>
+    </div>
+
+    <!-- Account Details wrapper -->
+    <div id="details-wrapper" style="display:none;">
+      <div class="text-center" style="margin:30px;">
+        <img id="avatar" alt="Avatar" class="avatar" />
+        <div style="font-size:220%;" id="greeting"></div>
+      </div>
+      <!-- Stats -->
+      <h5 style="text-align: center">Stats</h5>
+      <div id="stats-body">
+        <ul class="list-group">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            Photos
+            <span id="ph" class="badge badge-primary badge-pill">..</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            Locations
+            <span id="locations" class="badge badge-primary badge-pill"
+              >..</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
+      <!-- sqr -->
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-1529179747129118"
+        data-ad-slot="1546591554"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+      <!-- Activity -->
+      <h5 style="text-align: center">Activity</h5>
+      <div id="activity-body"></div>
+    </div>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <!-- sqr -->
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-1529179747129118"
+      data-ad-slot="1546591554"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- Modal -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <div class="overlay-content">
+        <div id="image-container"></div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div
+      class="footer"
+      style="padding-top:20px; padding-bottom:10px"
+      id="footer"
+    >
+      <div class="text-muted" style="margin-bottom:10px;">
+        Made By Sri Lankans <br />
+        For Sri Lankans
+      </div>
+
+      <a href="https://www.facebook.com/helapawura/">Contact Us</a>
+
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+    <!-- End of footer -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="./scripts/account.js"></script>
+  </body>
+</html>

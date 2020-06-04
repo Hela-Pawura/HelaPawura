@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /dev/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /images/assets/
+Disallow: /images/icons/
+Disallow: /about.html
+Disallow: /account.html
+Disallow: /upload.html
+
+Sitemap: https://helapawura.com/sitemap.xml

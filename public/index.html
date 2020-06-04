@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+                                                                                                                                                          
+                      ░▒▒▓▓▓▓▒▒░                                                                                                                      
+                  ▓████████████████▒                                                                                                                  
+               ▓██████████████████████▒                                                                                                               
+             ▓███████████▓  ████████████▒                                                                                                             
+           ░██▒      ▒██     ▒██░      ▓██                                                                                                            
+          ▒███       ░█        █        ███                                                                                                     ▓█▒   
+         ░████   ▒█▒ █▒        █▒ ▓█    ████                                                                            ▒▓█████▓              ▒██▓    
+         █████    ░█▓▓█   ▓▒   █▒██    ▒█████                                                                          ▓█░    ▒██▓          ▓█▓░      
+        ▓██████▒▓▓▓▓███▓  █▓  ████▓▓▓▓▒██████▒     ▒▓▓▓▓▓▓▓░   ████▓    ▓███▓        ▒▓▓▓▓▓▓▓          ▓████  ▒█▓██     ▒█▓█▒   ░█▓      ▓████▒░      
+        ███████▓▒   ░▓███▒██▒███▓░  ░▒████████   ▓█▓░    ░▓▒   ▓░  █░ ▒█▓░ ░██░    ▓██▓▒░ ░▒▓█▒        █▒  █▓ █   █▒    █▒  █▒   ▒█    ▓█▓▒   ▒██░    
+       ░█████▒         ▓█▓░░██▒         ▓█████  ▓█  ▒▓▓██▓      ▒▓▓█░░█      ▓█   ▓█  ░▓▓█▓▒ ██         ▒▓▓█▓▒█▓▓██     ▒▓▓▓█▓    █▒  ██        ▓█    
+       ░████       ░▓▓▓██    ██▓▓▓       ▒████  █▒ ▓█  ██░█▒  ██▒▒░ ░██▓      █░ ░█      ██▒▓█░       ██▒▒▒░  ░░▒▓█▓  ▒█▓▒░░░     █▒  █          █▒   
+       ░█████▒         ▓█▓ ░▓█▒         ▓█████  █▒  █▓▓█  ██  █     ▒▓ ▓█     █▒ ▓█       ░▒░         █░          ▒█  ██         ▓█▒  █░         █░   
+        ███████▓▒   ░▓███▒██▓███▒░   ▒████████  ▓█▒      ▒█░  ██       ▓█    ▒█  ▒█          ▒█       ██▒        ▒█▓  ▒█▒       ▓██▒  ██░      ▒█▓    
+        ▓██████▒▓▓▓▓████  █▓  ████▓▓▓▓▒██████▒   ▒██▓▓▓▓██░    ▓██▓▓▓▓██  ▓▓██▒   ██         ▒█        ▓███▓▓▓▓███▒    ░██▓▓▓▓███ █▒   ▓██▓▓▓███▒     
+         █████    ░█▓▓█   ▓▒   █▓█▓    ▒█████      ░▓▓▓▒░        ▒▓▓▓▒░   ▓▓▒     ░██░      ▒█▓           ▒▓▓▓▓▒░       ▒█▓▒▓▒▒   █▒     ░▓▓▓▒░       
+         ░████   ▒█▒ █▒        █▒ ▓█    ████                                        ▓███▓████▓                        ░█▒         █▒                  
+          ▒███       ░█        █        ███                                            ▒▒▒▒                            ██▓▓▓▓▓▓▓▓▓█▒                  
+           ░██░      ░██     ░██       ▓██                                                                               ░░░░░░░░░                    
+             ▓███████████▓  ▓███████████▒                                                                                                             
+               ▓██████████████████████▒                                                                                                               
+                 ░▓████████████████▒                                                                                                                  
+                      ░▒▓▓▓▓▓▓▒░                                                                                                                      
+                                                
+  -->
+    <title>Hela Pawura</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="/images/icons/apple-icon-180x180.png" />
+    <script data-ad-client="ca-pub-1529179747129118" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <style>
+      /* for the splash screen only to imprive first paint time*/
+      /* SPLASH TEXT */
+      #splash {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 2;
+      }
+      .overflow-hide {
+        overflow: hidden;
+      }
+      #splash-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        z-index: 999;
+        color: black;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+      }
+    </style>
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <meta
+      name="description"
+      content="As we step in to a new decade, steps have been taken by digitizing the Sri Lankan street art culture for the next generations.
+      Hela Pawura is your one stop to explore the all of our youth's amazing street art spread throughout the country, and also do your part by uploading your own works of street art. 
+      Spread the word. Be a part of the movement."
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body class="overflow-hide">
+    <!-- SPLASH SCREEN -->
+    <div id="splash-container">
+      <div id="splash"></div>
+      <div id="splash-text" class="text-center">
+        <img src="images/icon.png" style="z-index:99; width:60px;" alt="" />
+        <br />
+        <h4>Ayubowan</h4>
+        <br />
+        <h6 class="text-muted">Loading..</h6>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/"
+        ><img src="images/icon.png" class="align-middle" id="icon" alt="" />
+        <img src="images/text-sin2.png" id="text-icon" alt="" />
+      </a>
+      <a href="account.html"
+        ><button class="btn btn-primary account-button" type="submit">
+          my account
+        </button></a
+      >
+    </nav>
+    <!-- End of nav bar -->
+
+    <!--Description -->
+    <div class="text-center text-muted m-2" style="margin-top:10px">
+      Digitizing Sri Lankan Street Art Culture for the Next Generation of
+      Artists
+    </div>
+
+    <!-- Alert -->
+    <div
+      class="alert alert-info alert-dismissible"
+      style="width:100%; max-width:500px;margin:auto"
+      role="alert"
+      id="beta-alert"
+    >
+      We're still in the early stages of collecting street art photos, so we
+      need <strong>your</strong> help in uploading street art photos if you have
+      them.
+      <button
+        type="button"
+        class="close"
+        onClick="$('#beta-alert').fadeOut()"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <br />
+
+    <!-- Upload Button -->
+    <div class="text-center">
+      <a href="upload.html"
+        ><button class="btn btn-danger" id="upload-art-button">
+          upload your art
+        </button></a
+      >
+    </div>
+
+    <!-- Pawura preview-->
+    <div id="grid-container text-center">
+      <div class="row" id="r1" style="margin:0!important">
+        <div class="column" id="c0"></div>
+        <div class="column" id="c1"></div>
+        <div class="column" id="c2"></div>
+      </div>
+    </div>
+    <!-- End of preview -->
+    <br />
+    <!-- Show all photos btn-->
+    <div class="text-center">
+      <a href="pawura.html"
+        ><button
+          class="btn btn-primary"
+          style="width:98%; max-width:500px;"
+          id="all-button"
+        >
+          show all photos
+        </button></a
+      >
+    </div>
+    <!-- End of show all-->
+
+    <!-- Map -->
+    <div id="map"></div>
+    <!-- End of map and search -->
+
+    <!-- Search box-->
+    <br />
+    <div class="place-search text-center">
+      <div id="locationField">
+        <h6>Search</h6>
+        <input id="autocomplete" placeholder="Search Locations.." type="text" />
+      </div>
+    </div>
+
+    <br />
+    <hr />
+
+    <!-- Stats -->
+    <hr />
+    <div id="stats-container" style="display:none;">
+      <!-- Top Contributors -->
+      <h2 class="text-center">Top Contributors</h2>
+      <h6 class="text-center">
+        <a href="upload.html" style="text-decoration: underline;"
+          >Upload photos</a
+        >
+        to get to the leaderboard!
+      </h6>
+      <br />
+      <div id="top-contributors-container"></div>
+      <br />
+
+      <!-- Popular Places -->
+      <h2 class="text-center">Popular Places</h2>
+      <div id="popular-places-container"></div>
+      <br />
+
+      <!-- Popular Districts -->
+      <h2 class="text-center">Popular Districts</h2>
+      <div id="popular-district-container"></div>
+      <br />
+
+      <hr width="80%" />
+      <br />
+
+      <hr width="80%" />
+      <br />
+    </div>
+
+    <!-- Modal -->
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <div class="overlay-content">
+        <div id="image-container"></div>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div class="loading-div" id="loading-spinner">
+      <div class="text-center" style="z-index: 22; margin-top:10px;">
+        <div
+          class="spinner-border m-5"
+          style="width: 3rem; height: 3rem; "
+          role="status"
+        >
+          <span class="sr-only ">Loading ... </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="padding-top:20px; padding-bottom:10px">
+      <div class="text-muted" style="margin-bottom:10px;">
+        Made By Sri Lankans <br />
+        For Sri Lankans
+      </div>
+
+      <a href="https://www.facebook.com/helapawura/">Contact Us</a>
+
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <!-- End of footer -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDDHXFTmGYVaOO3KrWHPbPVffoKSOpL_34",
+        authDomain: "art-track.firebaseapp.com",
+        databaseURL: "https://art-track.firebaseio.com",
+        projectId: "art-track",
+        storageBucket: "art-track.appspot.com",
+        messagingSenderId: "720143271183",
+        appId: "1:720143271183:web:af48233af80529ed716a7a",
+        measurementId: "G-DP88P0B1KP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      var database = firebase.database();
+      firebase.analytics();
+    </script>
+
+    <script src="scripts/maps.js"></script>
+    <script src="scripts/showPhotos.js"></script>
+    <script src="scripts/stats.js"></script>
+    <script>
+      //service worker initialization
+      // Register the service worker
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(function(registration) {
+            // Registration was successful
+            console.log(
+              "ServiceWorker registration successful with scope: ",
+              registration.scope
+            );
+          })
+          .catch(function(err) {
+            // registration failed :(
+            console.log("ServiceWorker registration failed: ", err);
+          });
+      }
+    </script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKK8zqn56A7JyjsfSGPgLgaGt-KROEzi0&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>
