@@ -1,0 +1,42 @@
+.contactgrey{
+    background-color: #eeeeee;
+
+    max-width: 60%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 100%;
+    font-family: "Open Sans", sans-serif;
+    padding: 3rem;
+}
+
+.contactblack{
+    background-color: #d3d3d3;
+    padding: 3rem;
+    text-align: center;
+    color: black;
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+    .contactgrey{
+        background-color: #eeeeee;
+    
+        max-width: 80%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        height: 100%;
+        font-family: "Open Sans", sans-serif;
+        padding: 2rem;
+    }
+    
+    .contactblack{
+        background-color: #d3d3d3;
+        padding: 1rem;
+        text-align: center;
+        color: black;
+        
+    }
+  }
